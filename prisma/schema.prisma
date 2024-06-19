@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // ou "mysql", etc.
+  url      = env("DATABASE_URL")
+}
+
+model Eleve {
+  ID_Eleve         String    @id @default(cuid())
+  Nom              String
+  Prenom           String
+  Date_Naissance   DateTime
+  Sexe             String
+  Adresse          String
+  Numero_Telephone String
+  Adresse_Email    String
+  Parent_Tuteur    String
+  Photo            String?
+  Code_Acces       String?   @unique
+  Mot_de_Passe     String?
+  classe           Classe?   @relation(fields: [classeId], references: [ID_Classe])
+  classeId         String?
+  Facture          Facture[]
+}
+
+model Classe {
+  ID_Classe            String  @id @default(cuid())
+  Nom_Classe           String
+  Niveau               String // par exemple 1e, 2e
+  Filiere              String
+  Professeur_Principal String
+  Eleve                Eleve[]
+  annee                Annee   @relation(fields: [anneeId], references: [ID_Annee])
+  anneeId              String
+}
+
+model Annee {
+  ID_Annee    String   @id @default(cuid())
+  Annee_Debut DateTime
+  Annee_Fin   DateTime
+  Classe      Classe[]
+}
+
+model Administrateur {
+  ID_Administrateur String @id @default(cuid())
+  Nom               String
+  Prenom            String
+  Nom_Utilisateur   String @unique
+  Mot_de_Passe      String
+  Role              String
+}
+
+model Facture {
+  ID_Facture     String     @id @default(cuid())
+  Numero_Facture String     @default("CSD-0000000")
+  ID_Eleve       String
+  eleve          Eleve      @relation(fields: [ID_Eleve], references: [ID_Eleve])
+  Montant_Total  Float
+  Date_Emission  DateTime   @default(now())
+  Statut         String     @default("Non paye")
+  Paiement       Paiement[]
+  FraisIds       String
+  TotalPaiement  Int        @default(0)
+}
+
+model Paiement {
+  ID_Paiement   String   @id @default(cuid())
+  ID_Facture    String
+  facture       Facture  @relation(fields: [ID_Facture], references: [ID_Facture])
+  Montant_Paye  Float
+  Mode_Paiement String   @default("cash")
+  Date_Paiement DateTime @default(now())
+  Approuve      Boolean  @default(false)
+}
+
+model Frais {
+  ID_Frais    String @id @default(cuid())
+  Description String
+  Montant     Float
+}

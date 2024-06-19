@@ -18,10 +18,25 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  padding: 5px;
+}
+tbody tr {
+  cursor: pointer;
+  @apply hover:bg-orange-300/50 ease-in-out transition-all duration-300
+}
+input:focus {
+  outline-color: transparent;
+  outline: none;
+}
+select:focus {
+  outline-color: transparent;
+  outline: none;
 }
