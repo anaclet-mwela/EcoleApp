@@ -64,7 +64,7 @@ const page = async ({ params }) => {
             </thead>
             <tbody>
               {facture.Paiement.map((paiement) => (
-                <tr>
+                <tr key={paiement.ID_Facture}>
                   <td>
                     {" "}
                     {moment(paiement.Date_Paiement).format("DD-MM-YYYY")}{" "}

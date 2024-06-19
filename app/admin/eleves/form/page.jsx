@@ -21,7 +21,7 @@ const FormEleve = async ({ searchParams }) => {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2 items-center">
                 <div className="border border-orange-400 w-52 aspect-square rounded-md"></div>
-                <p className="text-center">Photo de l'Eleve</p>
+                <p className="text-center">Photo de l&apos;Eleve</p>
               </div>
 
               <div className="flex gap-8 items-center">
