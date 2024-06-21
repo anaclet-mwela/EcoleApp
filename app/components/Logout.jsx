@@ -11,7 +11,7 @@ const Logout = async () => {
       </div>
       <div className="">
         <form action={logout}>
-          <button>Logout</button>
+          <button>Deconnexion</button>
         </form>
       </div>
     </div>

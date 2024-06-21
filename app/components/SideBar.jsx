@@ -3,13 +3,10 @@ import React from "react";
 import Link from "next/link";
 import {
   FaCoffee,
-  FaFileInvoice,
   FaFileInvoiceDollar,
   FaMoneyBillAlt,
-  FaPencilAlt,
   FaSchool,
   FaUser,
-  FaUsers,
   FaWindows,
 } from "react-icons/fa";
 import { usePathname } from "next/navigation";
