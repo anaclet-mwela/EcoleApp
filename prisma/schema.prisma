@@ -2,9 +2,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// datasource db {
+//   provider = "sqlite" // ou "mysql", etc.
+//   url      = env("DATABASE_URL")
+// }
+
 datasource db {
-  provider = "sqlite" // ou "mysql", etc.
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  // url =  "postgres://default:gYZ8c1BlhCwa@ep-curly-glade-a4d26cjo.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+  url      = "postgres://default:gYZ8c1BlhCwa@ep-curly-glade-a4d26cjo-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require&pgbouncer=true&connect_timeout=300" // uses a direct connection
 }
 
 model Eleve {

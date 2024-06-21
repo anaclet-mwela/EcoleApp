@@ -5,12 +5,12 @@ async function main() {
   // Créer des années scolaires
   const annees = [
     {
-      ID_Annee: "1",
+      ID_Annee: "3",
       Annee_Debut: new Date("2023-09-01"),
       Annee_Fin: new Date("2024-06-30"),
     },
     {
-      ID_Annee: "2",
+      ID_Annee: "4",
       Annee_Debut: new Date("2024-09-01"),
       Annee_Fin: new Date("2025-06-30"),
     },
@@ -22,7 +22,7 @@ async function main() {
   // Créer des classes
   const classes = [
     {
-      ID_Classe: "1",
+      ID_Classe: "11",
       Nom_Classe: "1A",
       Niveau: "1e",
       Filiere: "Scientifique",
@@ -30,7 +30,7 @@ async function main() {
       annee: { connect: { ID_Annee: "1" } },
     },
     {
-      ID_Classe: "2",
+      ID_Classe: "22",
       Nom_Classe: "2B",
       Niveau: "2e",
       Filiere: "Littéraire",
@@ -45,7 +45,7 @@ async function main() {
   // Créer des élèves
   const eleves = [
     {
-      ID_Eleve: "1",
+      ID_Eleve: "11",
       Nom: "Durand",
       Prenom: "Alice",
       Date_Naissance: new Date("2010-01-15"),
@@ -60,7 +60,7 @@ async function main() {
       classe: { connect: { ID_Classe: "1" } },
     },
     {
-      ID_Eleve: "2",
+      ID_Eleve: "21",
       Nom: "Martin",
       Prenom: "Bob",
       Date_Naissance: new Date("2011-02-20"),
@@ -83,7 +83,7 @@ async function main() {
   // Créer des administrateurs
   const administrateurs = [
     {
-      ID_Administrateur: "1",
+      
       Nom: "Admin",
       Prenom: "One",
       Nom_Utilisateur: "admin1",
@@ -91,7 +91,7 @@ async function main() {
       Role: "SuperAdmin",
     },
     {
-      ID_Administrateur: "2",
+      
       Nom: "Admin",
       Prenom: "Two",
       Nom_Utilisateur: "admin2",
@@ -113,6 +113,7 @@ async function main() {
       Montant_Total: 200.0,
       Date_Echeance: new Date("2023-12-31"),
       Statut: "Non payé",
+      FraisIds: "1,2",
     },
     {
       ID_Facture: "2",
@@ -121,6 +122,7 @@ async function main() {
       Montant_Total: 250.0,
       Date_Echeance: new Date("2024-12-31"),
       Statut: "Non payé",
+      FraisIds: "1,2",
     },
     // Ajoutez 3 autres factures ici
   ];
@@ -131,19 +133,19 @@ async function main() {
   // Créer des frais pour chaque facture
   const fraisList = [
     {
-      ID_Frais: "1",
+      ID_Frais: "11",
       Description: "Frais d'inscription",
       Montant: 100.0,
       Facture: { connect: { ID_Facture: "1" } },
     },
     {
-      ID_Frais: "2",
+      ID_Frais: "21",
       Description: "Minervales",
       Montant: 100.0,
       Facture: { connect: { ID_Facture: "1" } },
     },
     {
-      ID_Frais: "3",
+      ID_Frais: "31",
       Description: "Frais d'inscription",
       Montant: 150.0,
       Facture: { connect: { ID_Facture: "2" } },
@@ -163,7 +165,7 @@ async function main() {
   // Créer des paiements
   const paiements = [
     {
-      ID_Paiement: "1",
+      ID_Paiement: "11",
       ID_Facture: "1",
       Montant_Paye: 100.0,
       Mode_Paiement: "En ligne",
@@ -171,7 +173,7 @@ async function main() {
       Approuve: false,
     },
     {
-      ID_Paiement: "2",
+      ID_Paiement: "12",
       ID_Facture: "2",
       Montant_Paye: 150.0,
       Mode_Paiement: "En ligne",

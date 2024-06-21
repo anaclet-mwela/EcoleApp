@@ -47,7 +47,7 @@ export async function login(
   
   
  
-  // IF CREDENTIALS ARE WRONG RETURN AN ERROR
+  // // IF CREDENTIALS ARE WRONG RETURN AN ERROR
   if(!user){
     return { error: "Utilisateur ou Mot de passe incorrect" }
   }
@@ -56,9 +56,12 @@ export async function login(
     return { error: "Mot de pass incorect!" }
   }
 
-// console.log(user)
+console.log(user)
 
 //   // You can pass any information you want
+  // session.isLoggedIn = true;
+  // session.userId = "sterf1sds12azf";
+  // session.username = "Deborah";
   session.isLoggedIn = true;
   session.userId = user.ID_Administrateur;
   session.username = Nom_Utilisateur;
