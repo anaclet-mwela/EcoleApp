@@ -1,6 +1,4 @@
 import React from "react";
-import { getEleves, supprimerEleve } from "../../../actions/elevesActions";
-import Link from "next/link";
 import Search from "../../components/Search";
 import ClassFilter from "../../components/ClassFilter";
 import Pagination from "../../components/Pagination";
