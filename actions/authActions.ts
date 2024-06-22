@@ -53,17 +53,10 @@ export async function login(
     return { error: "Mot de pass incorect!" }
   }
 
-console.log(user)
-
-//   // You can pass any information you want
-  // session.isLoggedIn = true;
-  // session.userId = "sterf1sds12azf";
-  // session.username = "Deborah";
   session.isLoggedIn = true;
   session.userId = user.ID_Administrateur;
   session.username = Nom_Utilisateur;
  
-
   await session.save();
   redirect("/admin")
 }
