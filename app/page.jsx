@@ -13,11 +13,9 @@ const LoginPage = async () => {
   }
 
   return (
-    <div className="grid grid-cols-2 h-screen">
-      <div className="h-full bg-orange-500 text-white grid place-items-center">
-        <h4 className="text-4xl font-bold mb-8">CS DANIELLA</h4>
-      </div>
-      <div className="bg-gray-300 grid place-items-center rounded-md p-4 shadow-md  flex-col gap-8 items-center">
+    <div className="grid place-items-center h-screen">
+      <div className="bg-orange-300 grid place-items-center rounded-md p-4 shadow-md  flex-col gap-8 items-center">
+        <h1 className="text-xl font-bold">Complexe Scolaire Danniella</h1>
         <LoginForm />
       </div>
     </div>

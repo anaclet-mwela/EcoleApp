@@ -5,7 +5,7 @@ import { prisma } from "../lib/prisma";
 export const getAdmins = async () => {
   try {
     const admins = await prisma.administrateur.findMany({});
-    return admin;
+    return admins;
   } catch (error) {
     console.error(error);
     return { message: "error occurred" };

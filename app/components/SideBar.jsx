@@ -2,7 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import {
+  FaCalendarAlt,
   FaCoffee,
+  FaCoins,
   FaFileInvoiceDollar,
   FaMoneyBillAlt,
   FaSchool,
@@ -30,6 +32,16 @@ const SideBar = () => {
       titre: "Classes",
       icon: <FaSchool />,
       link: "/admin/classes",
+    },
+    {
+      titre: "Frais",
+      icon: <FaCoins />,
+      link: "/admin/frais",
+    },
+    {
+      titre: "Annees",
+      icon: <FaCalendarAlt />,
+      link: "/admin/annees",
     },
     {
       titre: "Facture",

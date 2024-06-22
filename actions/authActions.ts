@@ -42,9 +42,6 @@ export async function login(
   const password = formData.get("password") as string
  
    const user: User | null = await getUserByUsername(username);
-  console.log(user)
-
-  
   
  
   // // IF CREDENTIALS ARE WRONG RETURN AN ERROR
